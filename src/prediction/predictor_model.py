@@ -86,16 +86,6 @@ class Classifier:
         self.model.fit(train_inputs, train_targets, sample_weight=sample_weight)
         self._is_trained = True
 
-    def predict_proba(self, inputs: pd.DataFrame) -> np.ndarray:
-        """Predict class probabilities for the given data.
-
-        Args:
-            inputs (pandas.DataFrame): The input data.
-        Returns:
-            numpy.ndarray: The predicted class probabilities.
-        """
-        return self.model.predict_proba(inputs)
-
     def predict(
         self,
         inputs: pd.DataFrame,
